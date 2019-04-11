@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>categories | 星期六 | 一切源于喜欢</title>
+  <title>Webpack使用步骤 | 星期六 | 一切源于喜欢</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="webpack4.x 使用步骤详解">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack使用步骤">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/webpack/index.html">
 <meta property="og:site_name" content="星期六 | 一切源于喜欢">
+<meta property="og:description" content="webpack4.x 使用步骤详解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T07:39:28.562Z">
+<meta property="og:updated_time" content="2019-04-11T07:38:41.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Webpack使用步骤">
+<meta name="twitter:description" content="webpack4.x 使用步骤详解">
   
     <link rel="alternative" href="/atom.xml" title="星期六 | 一切源于喜欢" type="application/atom+xml">
   
@@ -142,27 +145,97 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-webpack" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Webpack使用步骤
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-12-07T07:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2019/04/11/webpack/" class="archive-article-date">
+  	<time datetime="2019-04-11T03:35:15.629Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h5 id="webpack4-x-使用步骤详解"><a href="#webpack4-x-使用步骤详解" class="headerlink" title="webpack4.x 使用步骤详解"></a>webpack4.x 使用步骤详解</h5><a id="more"></a>
+<h5 id="步骤一：新建一个文件夹，它就是你存放的项目的文件啦"><a href="#步骤一：新建一个文件夹，它就是你存放的项目的文件啦" class="headerlink" title="步骤一：新建一个文件夹，它就是你存放的项目的文件啦"></a>步骤一：新建一个文件夹，它就是你存放的项目的文件啦</h5><h5 id="步骤二：进入项目的根目录"><a href="#步骤二：进入项目的根目录" class="headerlink" title="步骤二：进入项目的根目录"></a>步骤二：进入项目的根目录</h5><h5 id="步骤三：控制台输入：npm-init-y-y可以避免输入一堆关于project的信息-，此时你会发现根目录下多了一个package-json文件哦"><a href="#步骤三：控制台输入：npm-init-y-y可以避免输入一堆关于project的信息-，此时你会发现根目录下多了一个package-json文件哦" class="headerlink" title="步骤三：控制台输入：npm init -y (-y可以避免输入一堆关于project的信息)，此时你会发现根目录下多了一个package.json文件哦"></a>步骤三：控制台输入：npm init -y (-y可以避免输入一堆关于project的信息)，此时你会发现根目录下多了一个package.json文件哦</h5><h5 id="步骤四：安装webpack"><a href="#步骤四：安装webpack" class="headerlink" title="步骤四：安装webpack"></a>步骤四：安装webpack</h5><ul>
+<li><h5 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装:"></a>全局安装:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    npm install webpack --global</span><br><span class="line">    可以简写为：</span><br><span class="line">    npm i webpack -g</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">    也可以使用cnpm（淘宝镜像，这个需要提前安装），安装起来更快：</span><br><span class="line">    cnpm i webpack -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="本地项目安装：（一号坑出现！！！-如果你安装的webpack的版本是4-x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）"><a href="#本地项目安装：（一号坑出现！！！-如果你安装的webpack的版本是4-x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）" class="headerlink" title="本地项目安装：（一号坑出现！！！ 如果你安装的webpack的版本是4.x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）"></a>本地项目安装：（一号坑出现！！！ 如果你安装的webpack的版本是4.x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    cnpm install webpack --save-dev</span><br><span class="line">    可以简写为：</span><br><span class="line">    cnpm i webpack -D</span><br><span class="line">---------------------------------------------------</span><br><span class="line">    查看一下webpack的版本：</span><br><span class="line">    webpack -v</span><br><span class="line">---------------------------------------------------</span><br><span class="line">    4.x的webpack一定要安装一个webpack-cli</span><br><span class="line">    cnpm i webpack-cli -D</span><br><span class="line">---------------------------------------------------    </span><br><span class="line">    以上可以简写为：</span><br><span class="line">    cnpm i webpack webpack-cli -D</span><br></pre></td></tr></table></figure>
+<h5 id="步骤五：新增文件"><a href="#步骤五：新增文件" class="headerlink" title="步骤五：新增文件"></a>步骤五：新增文件</h5><ul>
+<li><h5 id="新增的目录结构如下："><a href="#新增的目录结构如下：" class="headerlink" title="新增的目录结构如下："></a>新增的目录结构如下：</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根目录</span><br><span class="line">|</span><br><span class="line">+ src文件夹</span><br><span class="line">|    |</span><br><span class="line">|   + index.html</span><br><span class="line">|    |</span><br><span class="line">|   + main.js</span><br><span class="line">|  </span><br><span class="line">+ webpack.config.js</span><br></pre></td></tr></table></figure>
+<h5 id="步骤六：配置出口和入口文件"><a href="#步骤六：配置出口和入口文件" class="headerlink" title="步骤六：配置出口和入口文件"></a>步骤六：配置出口和入口文件</h5><ul>
+<li><h5 id="在webpack-config-js中添加如下配置"><a href="#在webpack-config-js中添加如下配置" class="headerlink" title="在webpack.config.js中添加如下配置"></a>在webpack.config.js中添加如下配置</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&quot;path&quot;);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry:path.join(__dirname,&quot;/src/main.js&quot;), // 入口文件，即指定webpack要打包哪个文件</span><br><span class="line">    output:&#123; // 输出文件</span><br><span class="line">        path:path.join(__dirname,&quot;/dist&quot;), // 指定webpack打包好的文件要输入到哪个路径下</span><br><span class="line">        filename:&quot;bundle.js&quot; // 指定输出的文件名称</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="步骤七、构建本地服务器"><a href="#步骤七、构建本地服务器" class="headerlink" title="步骤七、构建本地服务器"></a>步骤七、构建本地服务器</h5><ul>
+<li><h5 id="安装服务器"><a href="#安装服务器" class="headerlink" title="安装服务器"></a>安装服务器</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在package-json中添加启动命令，即修改scripts的配置（注意：package-json是json文件，所有的字符串都要使用双引号，且不能添加注释）"><a href="#在package-json中添加启动命令，即修改scripts的配置（注意：package-json是json文件，所有的字符串都要使用双引号，且不能添加注释）" class="headerlink" title="在package.json中添加启动命令，即修改scripts的配置（注意：package.json是json文件，所有的字符串都要使用双引号，且不能添加注释）"></a>在package.json中添加启动命令，即修改scripts的配置（注意：package.json是json文件，所有的字符串都要使用双引号，且不能添加注释）</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;:&#123;</span><br><span class="line">    &quot;build&quot;:&quot;webpack&quot;,</span><br><span class="line">    &quot;dev&quot;:&quot;webpack-dev-server --open --port 8088 --contentBase dist --hot&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--open 可以在执行完打包命令后浏览器会自动打开页面</span><br><span class="line">--port 8088 浏览器的端口号为8088</span><br><span class="line">--contentBase dist 表示加载dist目录下的文件</span><br><span class="line">--hot 热更新，实现网页不重载的情况下就可以更新页面，异步刷新</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="除了上面的这个方法之外，也可在通过修改webpack-config-js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）"><a href="#除了上面的这个方法之外，也可在通过修改webpack-config-js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）" class="headerlink" title="除了上面的这个方法之外，也可在通过修改webpack.config.js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）"></a>除了上面的这个方法之外，也可在通过修改webpack.config.js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">第一步：修改webpack.config.js:(比较复杂的是热更新)</span><br><span class="line"></span><br><span class="line">    const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">    //启用热更新的第 2 步</span><br><span class="line">    const webpack = require(&quot;webpack&quot;);</span><br><span class="line">    module.exports = &#123;</span><br><span class="line">        entry: path.join(__dirname, &quot;/src/index.js&quot;), </span><br><span class="line">        output: &#123;</span><br><span class="line">            path: path.join(__dirname, &quot;/dist&quot;),</span><br><span class="line">            filename: &quot;bundle.js&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        devServer:&#123;</span><br><span class="line">            contentBase:&quot;./dist&quot;,//本地服务器所加载文件的目录</span><br><span class="line">            port:&quot;8088&quot;,//设置端口号为8088</span><br><span class="line">            inline:true,//文件修改后实时刷新</span><br><span class="line">            historyApiFallback:true,//不跳转</span><br><span class="line">            hot:true//启用热更新的第 1 步</span><br><span class="line">        &#125;,</span><br><span class="line">        plugins:[ //配置插件的节点</span><br><span class="line">            new webpack.HotModuleReplacementPlugin() // new一个热更新的模块对象，这是启用热更新的第 3 步</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">第二步：修改package.json:</span><br><span class="line"></span><br><span class="line">    &quot;scripts&quot;:&#123;</span><br><span class="line">        &quot;build&quot;:&quot;webpack&quot;,</span><br><span class="line">        &quot;dev&quot;:&quot;webpack-dev-server&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">知识点：（不用圈起来，应该不会考的）</span><br><span class="line"></span><br><span class="line">    devServer作为webpack配置选项中的一项，以下是它的一些配置选项:</span><br><span class="line">    </span><br><span class="line">        contentBase ：设置服务器所读取文件的目录，当前我们设置为&quot;./dist&quot;</span><br><span class="line">    </span><br><span class="line">        port ：设置端口号，如果省略，默认为8080</span><br><span class="line">        </span><br><span class="line">        inline ：设置为true，当源文件改变时会自动刷新页面</span><br><span class="line">        </span><br><span class="line">        historyApiFallback ：设置为true，所有的跳转将指向index.html</span><br><span class="line">        </span><br><span class="line">        hot：设置为true，表示启用热更新，一共需要三步操作，这只是第一步，热更新表示可以在不重载整个页面的情况下更新部分页面，即异步更新</span><br></pre></td></tr></table></figure>
+<h5 id="步骤八：安装HtmlWebpackPlugin插件"><a href="#步骤八：安装HtmlWebpackPlugin插件" class="headerlink" title="步骤八：安装HtmlWebpackPlugin插件"></a>步骤八：安装HtmlWebpackPlugin插件</h5><ul>
+<li><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm i html-webpack-plugin -D</span><br><span class="line"></span><br><span class="line">// 这个插件干嘛的：可以创建一新的html文件，类似于index.html，打包后将bundle.js（出口）文件引入到html文件中。比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在webpack-config-js中添加配置"><a href="#在webpack-config-js中添加配置" class="headerlink" title="在webpack.config.js中添加配置"></a>在webpack.config.js中添加配置</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">第一步：</span><br><span class="line">    const HtmlWebpackPlugin = reqiure(&apos;html-webpack-plugin&apos;);// 引入HtmlWebpackPlugin插件</span><br><span class="line">    </span><br><span class="line">第二步：在 module.exports 配置对象中添加plugins节点，配置该插件:</span><br><span class="line"></span><br><span class="line">    plugins:[</span><br><span class="line">        new HtmlWebpackPlugin(&#123;</span><br><span class="line">            template:path.join(__dirname,&quot;./src/index.html&quot;), // 指定模板页面，将来会根据指定的页面路径去生成内存中的页面</span><br><span class="line">            filename:&apos;index.html&apos; // 指定生成的页面的名称</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<h5 id="步骤九：添加解析样式的第三方loader加载器"><a href="#步骤九：添加解析样式的第三方loader加载器" class="headerlink" title="步骤九：添加解析样式的第三方loader加载器"></a>步骤九：添加解析样式的第三方loader加载器</h5><ul>
+<li><h5 id="安装style-loader、css-loader"><a href="#安装style-loader、css-loader" class="headerlink" title="安装style-loader、css-loader"></a>安装style-loader、css-loader</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i style-loader css-loader -D</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在-webpack-config-js-中的-module-exports-配置对象中添加-module-节点，并添加相应的配置"><a href="#在-webpack-config-js-中的-module-exports-配置对象中添加-module-节点，并添加相应的配置" class="headerlink" title="在 webpack.config.js 中的 module.exports 配置对象中添加 module 节点，并添加相应的配置"></a>在 webpack.config.js 中的 module.exports 配置对象中添加 module 节点，并添加相应的配置</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module:&#123; // 这个节点用于配置所有的第三方模块加载器</span><br><span class="line">    rules:[&#123; // 所有第三方模块的匹配规则</span><br><span class="line">        test:/\.css$/, //正则匹配以.css结尾的文件</span><br><span class="line">        use:[&apos;style-loader&apos;,&apos;css-loader&apos;] //需要用的loader</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="然后就可以愉快的使用-css文件啦，但是引用的时候注意不要再使用了，可以在js的入口文件main-js中引入：import-“-css-index-css”，假设是这个css文件的话"><a href="#然后就可以愉快的使用-css文件啦，但是引用的时候注意不要再使用了，可以在js的入口文件main-js中引入：import-“-css-index-css”，假设是这个css文件的话" class="headerlink" title="然后就可以愉快的使用.css文件啦，但是引用的时候注意不要再使用了，可以在js的入口文件main.js中引入：import “./css/index.css”，假设是这个css文件的话~"></a>然后就可以愉快的使用.css文件啦，但是引用的时候注意不要再使用<link>了，可以在js的入口文件main.js中引入：import “./css/index.css”，假设是这个css文件的话~</h5></li>
+</ul>
+<h5 id="步骤十：添加解析url的第三方loader加载器"><a href="#步骤十：添加解析url的第三方loader加载器" class="headerlink" title="步骤十：添加解析url的第三方loader加载器"></a>步骤十：添加解析url的第三方loader加载器</h5><ul>
+<li><h5 id="安装style-loader、css-loader-1"><a href="#安装style-loader、css-loader-1" class="headerlink" title="安装style-loader、css-loader"></a>安装style-loader、css-loader</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置"><a href="#在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置" class="headerlink" title="在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置"></a>在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 在loader后面可以添加参数，格式与在url后面添加参数一样，只是这里的参数名是固定的</span><br><span class="line">// limit：给定的值是图片的大小，单位是btye</span><br><span class="line">// 如果我们引用的图片，大于或等于给定的limit值，则不会被转为base64格式的字符串</span><br><span class="line">// 如果小于给定的limit值，则会被转为base64的字符串</span><br><span class="line">// name可以设置图片被编译好后的名称，[hash:8]表示截取hash的前8位，[name]表示图片的原名称，[ext]表示图片的后缀名，比如：12345678-美女.jpg</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    test:/\.(jpg|png|gif|bmp|jpeg)$/,</span><br><span class="line">    use:&apos;url-loader?limit=7932&amp;name=[hash:8]-[name].[ext]&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7-x，以前的很多模块都已经弃用了）"><a href="#步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7-x，以前的很多模块都已经弃用了）" class="headerlink" title="步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7.x，以前的很多模块都已经弃用了）"></a>步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7.x，以前的很多模块都已经弃用了）</h5><ul>
+<li><h5 id="安装需要的模块"><a href="#安装需要的模块" class="headerlink" title="安装需要的模块"></a>安装需要的模块</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    cnpm i babel-loader @babel/core @babel/preset-env -D</span><br><span class="line">    注：新版本没有babel-core、babel-preset-*，更新为：@babel/core、@babel/preset-*（坑出现的原因）</span><br><span class="line">------------------------------------------------------------------------------------------</span><br><span class="line">    cnpm i @babel/generator @babel/helpers @babel/runtime -D</span><br><span class="line">------------------------------------------------------------------------------------------</span><br><span class="line">    cnpm i @babel/plugin-transform-runtime -D</span><br><span class="line">------------------------------------------------------------------------------------------</span><br><span class="line">    cnpm i @babel/plugin-proposal-class-propierties -D</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置-1"><a href="#在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置-1" class="headerlink" title="在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置"></a>在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 在配置babel的loader规则的时候，必须把node_modules目录通过 exclude 选项排除掉，</span><br><span class="line">// 如果不排除node_modules，则babel会把node_modules中的所有的第三方js文件都打包编译，这样会非常消耗cpu，同时打包速度非常慢，</span><br><span class="line">// 哪怕最终babel把所有的node_modules中的js转换完毕了，项目也无法运行</span><br><span class="line">&#123;</span><br><span class="line">    test:/\.js$/,</span><br><span class="line">    use:&apos;babel-loader&apos;,</span><br><span class="line">    exclude:/node_modules/  //表示排除node_modules文件夹中的js</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="在根目录下新建-babelrc文件"><a href="#在根目录下新建-babelrc文件" class="headerlink" title="在根目录下新建.babelrc文件"></a>在根目录下新建.babelrc文件</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这个配置文件属于json格式，所以在写.babelrc配置的时候，必须符合json语法规范：不能写注释，字符串必须用双引号</span><br><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;: [&quot;@babel/preset-env&quot;],</span><br><span class="line">    &quot;plugins&quot;: [&quot;@babel/plugin-transform-runtime&quot;,&quot;@babel/plugin-proposal-class-properties&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="步骤十二：编写代码运行项目"><a href="#步骤十二：编写代码运行项目" class="headerlink" title="步骤十二：编写代码运行项目"></a>步骤十二：编写代码运行项目</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build ：打包项目</span><br><span class="line">npm run dev ：运行项目</span><br></pre></td></tr></table></figure>
+<h3 id="Tips-："><a href="#Tips-：" class="headerlink" title="== Tips ==："></a>== Tips ==：</h3><h5 id="1、如果运行的时候报错某个模块找不到了，但是查看package-json时发现这个模块已经有了，这个不能说明在node-modules文件夹中有该模块，只能说过去有过，此时最好是将node-modules删除重新npm-install"><a href="#1、如果运行的时候报错某个模块找不到了，但是查看package-json时发现这个模块已经有了，这个不能说明在node-modules文件夹中有该模块，只能说过去有过，此时最好是将node-modules删除重新npm-install" class="headerlink" title="1、如果运行的时候报错某个模块找不到了，但是查看package.json时发现这个模块已经有了，这个不能说明在node_modules文件夹中有该模块，只能说过去有过，此时最好是将node_modules删除重新npm install"></a>1、如果运行的时候报错某个模块找不到了，但是查看package.json时发现这个模块已经有了，这个不能说明在node_modules文件夹中有该模块，只能说过去有过，此时最好是将node_modules删除重新npm install</h5><h5 id="2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加"><a href="#2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加" class="headerlink" title="2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加"></a>2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加</h5>
       
 
       
@@ -170,7 +243,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Tools//" class="article-tag-list-link color1">Tools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -181,6 +276,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/js-体系/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript体系
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/11/vue-路由/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue学习笔记---路由</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -202,8 +316,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack4-x-使用步骤详解"><span class="toc-number">1.</span> <span class="toc-text">webpack4.x 使用步骤详解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤一：新建一个文件夹，它就是你存放的项目的文件啦"><span class="toc-number">2.</span> <span class="toc-text">步骤一：新建一个文件夹，它就是你存放的项目的文件啦</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤二：进入项目的根目录"><span class="toc-number">3.</span> <span class="toc-text">步骤二：进入项目的根目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤三：控制台输入：npm-init-y-y可以避免输入一堆关于project的信息-，此时你会发现根目录下多了一个package-json文件哦"><span class="toc-number">4.</span> <span class="toc-text">步骤三：控制台输入：npm init -y (-y可以避免输入一堆关于project的信息)，此时你会发现根目录下多了一个package.json文件哦</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤四：安装webpack"><span class="toc-number">5.</span> <span class="toc-text">步骤四：安装webpack</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#全局安装"><span class="toc-number">6.</span> <span class="toc-text">全局安装:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#本地项目安装：（一号坑出现！！！-如果你安装的webpack的版本是4-x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）"><span class="toc-number">7.</span> <span class="toc-text">本地项目安装：（一号坑出现！！！ 如果你安装的webpack的版本是4.x，一定要再安装一个webpack-cli，不然会报错，比如提示安装webpack-cli或者警告webpack是不可用的命令等等）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤五：新增文件"><span class="toc-number">8.</span> <span class="toc-text">步骤五：新增文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增的目录结构如下："><span class="toc-number">9.</span> <span class="toc-text">新增的目录结构如下：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤六：配置出口和入口文件"><span class="toc-number">10.</span> <span class="toc-text">步骤六：配置出口和入口文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在webpack-config-js中添加如下配置"><span class="toc-number">11.</span> <span class="toc-text">在webpack.config.js中添加如下配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤七、构建本地服务器"><span class="toc-number">12.</span> <span class="toc-text">步骤七、构建本地服务器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装服务器"><span class="toc-number">13.</span> <span class="toc-text">安装服务器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在package-json中添加启动命令，即修改scripts的配置（注意：package-json是json文件，所有的字符串都要使用双引号，且不能添加注释）"><span class="toc-number">14.</span> <span class="toc-text">在package.json中添加启动命令，即修改scripts的配置（注意：package.json是json文件，所有的字符串都要使用双引号，且不能添加注释）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#除了上面的这个方法之外，也可在通过修改webpack-config-js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）"><span class="toc-number">15.</span> <span class="toc-text">除了上面的这个方法之外，也可在通过修改webpack.config.js来配置服务器（不推荐，比较麻烦啊，我都懒得写了）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤八：安装HtmlWebpackPlugin插件"><span class="toc-number">16.</span> <span class="toc-text">步骤八：安装HtmlWebpackPlugin插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装"><span class="toc-number">17.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在webpack-config-js中添加配置"><span class="toc-number">18.</span> <span class="toc-text">在webpack.config.js中添加配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤九：添加解析样式的第三方loader加载器"><span class="toc-number">19.</span> <span class="toc-text">步骤九：添加解析样式的第三方loader加载器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装style-loader、css-loader"><span class="toc-number">20.</span> <span class="toc-text">安装style-loader、css-loader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在-webpack-config-js-中的-module-exports-配置对象中添加-module-节点，并添加相应的配置"><span class="toc-number">21.</span> <span class="toc-text">在 webpack.config.js 中的 module.exports 配置对象中添加 module 节点，并添加相应的配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#然后就可以愉快的使用-css文件啦，但是引用的时候注意不要再使用了，可以在js的入口文件main-js中引入：import-“-css-index-css”，假设是这个css文件的话"><span class="toc-number">22.</span> <span class="toc-text">然后就可以愉快的使用.css文件啦，但是引用的时候注意不要再使用了，可以在js的入口文件main.js中引入：import “./css/index.css”，假设是这个css文件的话~</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤十：添加解析url的第三方loader加载器"><span class="toc-number">23.</span> <span class="toc-text">步骤十：添加解析url的第三方loader加载器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装style-loader、css-loader-1"><span class="toc-number">24.</span> <span class="toc-text">安装style-loader、css-loader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置"><span class="toc-number">25.</span> <span class="toc-text">在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7-x，以前的很多模块都已经弃用了）"><span class="toc-number">26.</span> <span class="toc-text">步骤十一：安装配置Babel（二号坑出现！！！Babel升级到了7.x，以前的很多模块都已经弃用了）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装需要的模块"><span class="toc-number">27.</span> <span class="toc-text">安装需要的模块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在-webpack-config-js-中找的-module-节点，在rules属性中添加相应的配置-1"><span class="toc-number">28.</span> <span class="toc-text">在 webpack.config.js 中找的  module 节点，在rules属性中添加相应的配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在根目录下新建-babelrc文件"><span class="toc-number">29.</span> <span class="toc-text">在根目录下新建.babelrc文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤十二：编写代码运行项目"><span class="toc-number">30.</span> <span class="toc-text">步骤十二：编写代码运行项目</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips-："><span class="toc-number"></span> <span class="toc-text">== Tips ==：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、如果运行的时候报错某个模块找不到了，但是查看package-json时发现这个模块已经有了，这个不能说明在node-modules文件夹中有该模块，只能说过去有过，此时最好是将node-modules删除重新npm-install"><span class="toc-number">1.</span> <span class="toc-text">1、如果运行的时候报错某个模块找不到了，但是查看package.json时发现这个模块已经有了，这个不能说明在node_modules文件夹中有该模块，只能说过去有过，此时最好是将node_modules删除重新npm install</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加"><span class="toc-number">2.</span> <span class="toc-text">2、上面的步骤不是绝对的，还有很多插件和加载器可以根据项目的需要自行添加</span></a></li></ol>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -243,7 +357,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

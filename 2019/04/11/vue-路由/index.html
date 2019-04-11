@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>categories | 星期六 | 一切源于喜欢</title>
+  <title>Vue学习笔记---路由 | 星期六 | 一切源于喜欢</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="SPA的核心就是前端路由，何为路由？">
+<meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记---路由">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/vue-路由/index.html">
 <meta property="og:site_name" content="星期六 | 一切源于喜欢">
+<meta property="og:description" content="SPA的核心就是前端路由，何为路由？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T07:39:28.562Z">
+<meta property="og:updated_time" content="2019-04-11T06:26:41.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Vue学习笔记---路由">
+<meta name="twitter:description" content="SPA的核心就是前端路由，何为路由？">
   
     <link rel="alternative" href="/atom.xml" title="星期六 | 一切源于喜欢" type="application/atom+xml">
   
@@ -142,27 +145,91 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-vue-路由" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Vue学习笔记---路由
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-12-07T07:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2019/04/11/vue-路由/" class="archive-article-date">
+  	<time datetime="2019-04-11T03:34:35.840Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h5 id="SPA的核心就是前端路由，何为路由？"><a href="#SPA的核心就是前端路由，何为路由？" class="headerlink" title="SPA的核心就是前端路由，何为路由？"></a>SPA的核心就是前端路由，何为路由？</h5><a id="more"></a>
+<h3 id="一、什么是路由"><a href="#一、什么是路由" class="headerlink" title="一、什么是路由"></a>一、什么是路由</h3><p>对于单页面应用程序来说，主要通过URL中的hash来实现不同页面的切换，同时hash有一个特点：HTTP请求中不会包含hash相关的内容。在单页面程序中，这种通过hash来切换页面的方式就是前端路由。</p>
+<h3 id="二、使用路由"><a href="#二、使用路由" class="headerlink" title="二、使用路由"></a>二、使用路由</h3><ul>
+<li><h5 id="导入路由组件类库"><a href="#导入路由组件类库" class="headerlink" title="导入路由组件类库"></a>导入路由组件类库</h5></li>
+<li><h5 id="使用router-link组件来导航"><a href="#使用router-link组件来导航" class="headerlink" title="使用router-link组件来导航"></a>使用router-link组件来导航</h5></li>
+<li><h5 id="使用router-view组件来显示匹配到的组件"><a href="#使用router-view组件来显示匹配到的组件" class="headerlink" title="使用router-view组件来显示匹配到的组件"></a>使用router-view组件来显示匹配到的组件</h5></li>
+<li><h5 id="使用Vue-extend创建组件"><a href="#使用Vue-extend创建组件" class="headerlink" title="使用Vue.extend创建组件"></a>使用Vue.extend创建组件</h5></li>
+<li><h5 id="创建一个路由实例，通过routers属性来定义路由的匹配规则、"><a href="#创建一个路由实例，通过routers属性来定义路由的匹配规则、" class="headerlink" title="创建一个路由实例，通过routers属性来定义路由的匹配规则、"></a>创建一个路由实例，通过routers属性来定义路由的匹配规则、</h5></li>
+<li><h5 id="创建vue实例，使用router属性将路由对象注册到vue实例上"><a href="#创建vue实例，使用router属性将路由对象注册到vue实例上" class="headerlink" title="创建vue实例，使用router属性将路由对象注册到vue实例上"></a>创建vue实例，使用router属性将路由对象注册到vue实例上</h5></li>
+</ul>
+<p>html部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- router-link默认渲染为一个a标签，</span><br><span class="line">        如果想要它渲染为其他标签，则使用属性tag，tag的值就是想要渲染的标签，</span><br><span class="line">        不管渲染成什么标签，都具有点击的功能 --&gt;</span><br><span class="line">    &lt;router-link to=&quot;/login&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link to=&quot;/register&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 4.使用vue-router提供的router-view标签用来作占位符，路由规则匹配到的组件将会展示到这个占位符中 --&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>js部分代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 1.安装vue-router路由模块 --&gt;</span><br><span class="line">&lt;script src=&quot;./vue-router-3.0.2.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 创建组件</span><br><span class="line">    var login = Vue.extend(&#123;</span><br><span class="line">        template: &apos;&lt;h1&gt;登录组件&lt;/h1&gt;&apos;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var register = Vue.extend(&#123;</span><br><span class="line">        template: &apos;&lt;h1&gt;注册组件&lt;/h1&gt;&apos;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 2.创建一个路由对象，当导入vue-router包之后，在window全局对象中，就有了一个路由的构造函数，叫做VueRouter</span><br><span class="line">    var routerObj = new VueRouter(&#123;</span><br><span class="line">        // route:表示路由的匹配规则</span><br><span class="line">        routes: [&#123; //路由匹配规则，每个路由规则都是一个对象，它通常包含两个属性：path和component。</span><br><span class="line">            //path表示监听哪个路由链接地址</span><br><span class="line">            //component表示如果路由是前面匹配到的path，则展示对应component属性对应的那个组件。注意，该属性的值必须是组件的模板对象，不能是组件的引用名称。</span><br><span class="line">            path: &apos;/login&apos;,</span><br><span class="line">            component: login</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            path: &apos;/register&apos;,</span><br><span class="line">            component: register</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            // path:&apos;/&apos;,</span><br><span class="line">            // component:login,</span><br><span class="line">            //设置页面的默认页面，推荐使用redirect重定向</span><br><span class="line">            //当访问根路径的时候，重定向到login组件</span><br><span class="line">            path: &apos;/&apos;,</span><br><span class="line">            redirect: &apos;/login&apos;</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        // 3.将路由对象注册到vm实例上，用来监听URL地址的变化，然后展示对应的组件</span><br><span class="line">        router: routerObj</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="三、路由的常见操作"><a href="#三、路由的常见操作" class="headerlink" title="三、路由的常见操作"></a>三、路由的常见操作</h3><ul>
+<li><h5 id="设置选中路由高亮的两种方式："><a href="#设置选中路由高亮的两种方式：" class="headerlink" title="设置选中路由高亮的两种方式："></a>设置选中路由高亮的两种方式：</h5>a. ##### 修改自带的类router-link-active，当选中一个路由后f12就可以看到这个类；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.router-link-active &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>b. ##### 在路由的构造函数中添加linkActiveClass属性，属性值为高亮的自定义类名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">css：</span><br><span class="line">    .my-active &#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">js：</span><br><span class="line">    var routerObj = new VueRouter(&#123;</span><br><span class="line">        routes: [&#123; </span><br><span class="line">            path: &apos;/login&apos;,</span><br><span class="line">            component: login</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            path: &apos;/register&apos;,</span><br><span class="line">            component: register</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            path: &apos;/&apos;,</span><br><span class="line">            redirect: &apos;/login&apos;</span><br><span class="line">        &#125;],</span><br><span class="line">        //添加该属性</span><br><span class="line">        linkActiveClass: &apos;my-active&apos;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="四、嵌套路由"><a href="#四、嵌套路由" class="headerlink" title="四、嵌套路由"></a>四、嵌套路由</h3><ul>
+<li><h5 id="在父级路由中添加children配置项，该配置项用来配置子路由"><a href="#在父级路由中添加children配置项，该配置项用来配置子路由" class="headerlink" title="在父级路由中添加children配置项，该配置项用来配置子路由"></a>在父级路由中添加children配置项，该配置项用来配置子路由</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">path: &apos;/home&apos;,</span><br><span class="line">component: Home,</span><br><span class="line">children: [&#123;</span><br><span class="line">    path: &apos;&apos;, // 设置默认展示的路由组件</span><br><span class="line">    redirect: &apos;news&apos;</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    path: &apos;message&apos;,</span><br><span class="line">    component: Messag</span><br><span class="line">&#125;,&#123;</span><br><span class="line">    path: &apos;news&apos;,</span><br><span class="line">    component: News</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="路由链接"><a href="#路由链接" class="headerlink" title="路由链接"></a>路由链接</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;</span><br><span class="line">&lt;router-link to=&quot;/home/message&quot;&gt;Message&lt;/router-link&gt;</span><br><span class="line">&lt;router-view&gt;&lt;/route-view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="五、向路由组件传递数据"><a href="#五、向路由组件传递数据" class="headerlink" title="五、向路由组件传递数据"></a>五、向路由组件传递数据</h3><ul>
+<li><h5 id="方法1：使用路由链接携带参数"><a href="#方法1：使用路由链接携带参数" class="headerlink" title="方法1：使用路由链接携带参数"></a>方法1：使用路由链接携带参数</h5><ul>
+<li><p>路由配置</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">children: [&#123;</span><br><span class="line">    path: &apos;mdetail/:id&apos;,</span><br><span class="line">    component: MessageDetail</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>路由链接</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=&quot;&apos;/home/message/mdetail/&apos;+m.id&quot;&gt;&#123;&#123;m.title&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在路由组件中获取携带的参数</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$route.params.id</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="方法2：使用的属性携带参数"><a href="#方法2：使用的属性携带参数" class="headerlink" title="方法2：使用的属性携带参数"></a>方法2：使用<router-view>的属性携带参数</router-view></h5><ul>
+<li><p>在<router-view>中添加属性值</router-view></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view msg=&quot;abc&quot;&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在路由组件中获取参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">先接收参数：</span><br><span class="line">    props:[&apos;msg&apos;]</span><br><span class="line">    </span><br><span class="line">页面显示：</span><br><span class="line">    &#123;&#123;msg&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="六、编程式路由导航"><a href="#六、编程式路由导航" class="headerlink" title="六、编程式路由导航"></a>六、编程式路由导航</h3><ul>
+<li><h5 id="push-path-方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）"><a href="#push-path-方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）" class="headerlink" title="push(path) 方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）"></a>push(path) 方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&apos;/home/message/mdetail/&apos;+id)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="replace-path-方法：替代当前的访问记录（回退时会回到上上个页面）"><a href="#replace-path-方法：替代当前的访问记录（回退时会回到上上个页面）" class="headerlink" title="replace(path) 方法：替代当前的访问记录（回退时会回到上上个页面）"></a>replace(path) 方法：替代当前的访问记录（回退时会回到上上个页面）</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$router.replace(&apos;/home/message/detail/&apos;+id)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="back-方法：返回上一页"><a href="#back-方法：返回上一页" class="headerlink" title="back() 方法：返回上一页"></a>back() 方法：返回上一页</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@click=&quot;$router.back()&quot;</span><br><span class="line">------------------------</span><br><span class="line">this.$router.back()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="go-1-返回上一页"><a href="#go-1-返回上一页" class="headerlink" title="go(-1) 返回上一页"></a>go(-1) 返回上一页</h5></li>
+<li><h5 id="go-1-前往上一页"><a href="#go-1-前往上一页" class="headerlink" title="go(1) 前往上一页"></a>go(1) 前往上一页</h5></li>
+</ul>
+
       
 
       
@@ -171,6 +238,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Vue//" class="article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -181,6 +259,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Webpack使用步骤
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/11/vue-组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue学习笔记---组件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -202,8 +299,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#SPA的核心就是前端路由，何为路由？"><span class="toc-number">1.</span> <span class="toc-text">SPA的核心就是前端路由，何为路由？</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#一、什么是路由"><span class="toc-number"></span> <span class="toc-text">一、什么是路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、使用路由"><span class="toc-number"></span> <span class="toc-text">二、使用路由</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#导入路由组件类库"><span class="toc-number">1.</span> <span class="toc-text">导入路由组件类库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用router-link组件来导航"><span class="toc-number">2.</span> <span class="toc-text">使用router-link组件来导航</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用router-view组件来显示匹配到的组件"><span class="toc-number">3.</span> <span class="toc-text">使用router-view组件来显示匹配到的组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用Vue-extend创建组件"><span class="toc-number">4.</span> <span class="toc-text">使用Vue.extend创建组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个路由实例，通过routers属性来定义路由的匹配规则、"><span class="toc-number">5.</span> <span class="toc-text">创建一个路由实例，通过routers属性来定义路由的匹配规则、</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建vue实例，使用router属性将路由对象注册到vue实例上"><span class="toc-number">6.</span> <span class="toc-text">创建vue实例，使用router属性将路由对象注册到vue实例上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、路由的常见操作"><span class="toc-number"></span> <span class="toc-text">三、路由的常见操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设置选中路由高亮的两种方式："><span class="toc-number">1.</span> <span class="toc-text">设置选中路由高亮的两种方式：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、嵌套路由"><span class="toc-number"></span> <span class="toc-text">四、嵌套路由</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在父级路由中添加children配置项，该配置项用来配置子路由"><span class="toc-number">1.</span> <span class="toc-text">在父级路由中添加children配置项，该配置项用来配置子路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#路由链接"><span class="toc-number">2.</span> <span class="toc-text">路由链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、向路由组件传递数据"><span class="toc-number"></span> <span class="toc-text">五、向路由组件传递数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方法1：使用路由链接携带参数"><span class="toc-number">1.</span> <span class="toc-text">方法1：使用路由链接携带参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法2：使用的属性携带参数"><span class="toc-number">2.</span> <span class="toc-text">方法2：使用的属性携带参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、编程式路由导航"><span class="toc-number"></span> <span class="toc-text">六、编程式路由导航</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#push-path-方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）"><span class="toc-number">1.</span> <span class="toc-text">push(path) 方法：向浏览器访问历史中添加一个新的记录（回退时会回到上一个页面）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#replace-path-方法：替代当前的访问记录（回退时会回到上上个页面）"><span class="toc-number">2.</span> <span class="toc-text">replace(path) 方法：替代当前的访问记录（回退时会回到上上个页面）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#back-方法：返回上一页"><span class="toc-number">3.</span> <span class="toc-text">back() 方法：返回上一页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#go-1-返回上一页"><span class="toc-number">4.</span> <span class="toc-text">go(-1) 返回上一页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#go-1-前往上一页"><span class="toc-number">5.</span> <span class="toc-text">go(1) 前往上一页</span></a></li></ol>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -243,7 +340,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

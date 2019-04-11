@@ -986,7 +986,15 @@ html {
 .left-col #header .profilepic img {
     border-radius: 300px;
     opacity: 1;
-    -webkit-transition: all .2s ease-in
+    -webkit-transition: all 1s ease-in
+}
+
+.js-avatar {
+    transition: all 1s;
+}
+
+.js-avatar:hover {
+    transform: rotate(360deg);
 }
 
 .left-col #header .profilepic img.show {
@@ -998,7 +1006,7 @@ html {
 .left-col #header .header-author {
     text-align: center;
     margin: .67em 0;
-    font-family: Roboto, serif;
+    font-family: "Times New Roman", Georgia, Serif;
     font-size: 30px;
     transition: .3s
 }
@@ -2719,7 +2727,7 @@ pre .id {
 }
 
 .jump-container:hover .icon-back {
-    background: rgba(36, 193, 246, .9)
+    background: #7e797a
 }
 
 .jump-container,
@@ -2775,7 +2783,7 @@ pre .id {
 }
 
 .toc-container.tooltip-left:hover {
-    background: rgba(36, 193, 246, .9)
+    background: #7e797a
 }
 
 .toc-container.tooltip-left .icon-font {
@@ -2873,7 +2881,7 @@ pre .id {
 
 .tooltip-left .tooltip-content {
     position: absolute;
-    background: rgba(36, 193, 246, .9);
+    background: #7e797a;
     z-index: 9999;
     width: 200px;
     bottom: 50%;
@@ -3020,7 +3028,7 @@ pre .id {
 }
 
 .tooltip-top .tooltip-inner {
-    background: rgba(36, 193, 246, .9);
+    background: #7e797a;
     padding: 40px;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);

@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>categories | 星期六 | 一切源于喜欢</title>
+  <title>Vue学习笔记---生命周期钩子 | 星期六 | 一切源于喜欢</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）">
+<meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记---生命周期钩子">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/vue-life/index.html">
 <meta property="og:site_name" content="星期六 | 一切源于喜欢">
+<meta property="og:description" content="理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T07:39:28.562Z">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/E37C9D025DA74B629EFDD247A88323A4?method=download&shareKey=0b49282ffa25ca320fea5c6cb08c2b0d">
+<meta property="og:updated_time" content="2019-04-11T06:10:28.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Vue学习笔记---生命周期钩子">
+<meta name="twitter:description" content="理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/E37C9D025DA74B629EFDD247A88323A4?method=download&shareKey=0b49282ffa25ca320fea5c6cb08c2b0d">
   
     <link rel="alternative" href="/atom.xml" title="星期六 | 一切源于喜欢" type="application/atom+xml">
   
@@ -142,27 +147,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-vue-life" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Vue学习笔记---生命周期钩子
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-12-07T07:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2019/04/11/vue-life/" class="archive-article-date">
+  	<time datetime="2019-04-11T03:34:15.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h5 id="理解Vue的生命周期吧，感受vue从创建到销毁的美妙-（怎么看着觉得有点残忍）"><a href="#理解Vue的生命周期吧，感受vue从创建到销毁的美妙-（怎么看着觉得有点残忍）" class="headerlink" title="理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）"></a>理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）</h5><a id="more"></a>
+<h3 id="一、什么是生命周期钩子"><a href="#一、什么是生命周期钩子" class="headerlink" title="一、什么是生命周期钩子"></a>一、什么是生命周期钩子</h3><ul>
+<li>生命周期：Vue实例从创建、运行到被销毁的过程，称为该实例的生命周期</li>
+<li>生命周期钩子：就是在生命周期中的某个阶段执行的已定义的方法。比较常用的是created和mounted</li>
+</ul>
+<hr>
+<h3 id="二、生命周期钩子详解"><a href="#二、生命周期钩子详解" class="headerlink" title="二、生命周期钩子详解"></a>二、生命周期钩子详解</h3><p><img src="https://note.youdao.com/yws/api/personal/file/E37C9D025DA74B629EFDD247A88323A4?method=download&amp;shareKey=0b49282ffa25ca320fea5c6cb08c2b0d" alt="生命周期钩子流程图"></p>
+<h5 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; value=&quot;修改msg&quot; @click=&quot;msg=&apos;更新了&apos;&quot;&gt;</span><br><span class="line">        &lt;h3 id=&quot;h3&quot;&gt;&#123;&#123; msg &#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="1、beforeCreate"><a href="#1、beforeCreate" class="headerlink" title="1、beforeCreate"></a>1、beforeCreate</h5><ul>
+<li>这是第一个生命周期函数，在beforeCreate函数执行的时候，data和methods还没有被初始化，此时调用data和methods中的方法会没有用甚至报错。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        msg: &apos;生命周期&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        show: function() &#123;</span><br><span class="line">            console.log(&quot;我执行了。。。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //这是第一个生命周期函数</span><br><span class="line">    //注意：在beforeCreate生命周期函数执行的时候，data和methods中的数据都还没有被初始化</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        console.log(this.msg) //=&gt;undefined</span><br><span class="line">        this.show() //=&gt;this.show is not a function</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2、created"><a href="#2、created" class="headerlink" title="2、created"></a>2、created</h5><ul>
+<li>这是第二个生命周期函数，在created函数执行的时候，data和methods已经初始化了，此时可以调用data里的数据和methods里的方法了。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//这是第二个生命周期函数</span><br><span class="line">//注意：在created中，data和methods已经初始化了，</span><br><span class="line">//如果要调用methods中的方法或者操作data中的数据，最早只能在created中执行</span><br><span class="line">created() &#123;</span><br><span class="line">    console.log(this.msg) //生命周期</span><br><span class="line">    this.show() //我执行了</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3、beforeMount"><a href="#3、beforeMount" class="headerlink" title="3、beforeMount"></a>3、beforeMount</h5><ul>
+<li>这是第三个生命周期函数，在执行这个函数之前，vue会执行一个模板编译的操作，将vue代码中的那些指令进行执行，最终在内存中生成一个编译好的模板字符串，然后把这个模板字符串生成内存中的dom。注意：此时只是在内存中，并没有渲染到页面上。</li>
+<li>表示模板已经在内存中编译完成了，但是尚未把模板渲染到页面上。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//这是第三个生命周期函数，表示模板已经在内存中编译完成了，但是尚未把模板渲染到页面上</span><br><span class="line">//在beforMount执行的时候，页面中的元素还没有真正的被替换，只是之前写好的一些模板字符串</span><br><span class="line">beforeMount() &#123;</span><br><span class="line">    console.log(document.getElementById(&apos;h3&apos;).innerText); //=&gt;&#123;&#123; msg &#125;&#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h5 id="4、mounted"><a href="#4、mounted" class="headerlink" title="4、mounted"></a>4、mounted</h5><ul>
+<li>这是第四个生命周期函数，表示内存中的模板已经真实的挂载到了页面上，已经可以看到渲染好的页面了</li>
+<li>mounted是实例创建阶段的最后一个生命周期函数，该函数执行完，就表示vue实例已经完全创建好了，此时组件已经脱离了创建阶段，进入了运行阶段。</li>
+<li>此时，如果没有什么其他的操作，这个实例就会静静的躺在内存中，一动不动。。。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//这是第四个生命周期函数，表示内存中的模板已经真实的挂载到了页面中，已经可以看的渲染好的页面了</span><br><span class="line">//注意：mounted 是实例创建期间的最后一个生命周期函数，当执行完了mounted，就表示实例已经被创建好了</span><br><span class="line">mounted() &#123;</span><br><span class="line">    console.log(document.getElementById(&apos;h3&apos;).innerText); //=&gt;生命周期</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5、beforeUpdate"><a href="#5、beforeUpdate" class="headerlink" title="5、beforeUpdate"></a>5、beforeUpdate</h5><ul>
+<li>vue实例在运行过程中有两个生命周期函数，分别是beforeUpdate和updated，这两个函数会根据data的改变而有选择的触发0次或者多次。</li>
+<li>在beforeUpdate执行时，data中的数据已经更新了，但是页面并没有同步更行。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//接下来是实例运行过程中的两个事件</span><br><span class="line">//此时，界面上还没有更新，但是data已经更新了</span><br><span class="line">//当执行beforeUpdate的时候，页面中显示的数据还没有发生改变，而data数据是最新的，</span><br><span class="line">//此时页面和data尚未同步</span><br><span class="line">beforeUpdate() &#123;</span><br><span class="line">    console.log(&quot;界面上的内容是：&quot; + document.getElementById(&apos;h3&apos;).innerText);//=&gt;生命周期</span><br><span class="line">    console.log(&quot;data中的msg是：&quot; + this.msg)//=&gt;更新了</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="6、updated"><a href="#6、updated" class="headerlink" title="6、updated"></a>6、updated</h5><ul>
+<li>在执行这个函数的时候，界面上的数据和data中的数据已经同步更新了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//updated执行的时候，界面和data都是最新的</span><br><span class="line">updated() &#123;</span><br><span class="line">    console.log(&quot;界面上的内容是：&quot; + document.getElementById(&apos;h3&apos;).innerText);</span><br><span class="line">    console.log(&quot;data中的msg是：&quot; + this.msg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在vue实例的运行阶段，执行的操作大致是这样的：先根据data中最新的数据，在内存中重新渲染一个新的内存dom树，当最新的内存dom树被更新之后，会重新渲染到页面上去，这就完成了数据从data（model）层到view层的更新</li>
+</ul>
+<h5 id="7、beforeDestroy"><a href="#7、beforeDestroy" class="headerlink" title="7、beforeDestroy"></a>7、beforeDestroy</h5><ul>
+<li>当执行beforeDestroy函数的时候，vue实例就已经从运行阶段进入到销毁阶段了。当执行该函数的时候，vue实例身上的data、methods、指令等等都是可用的，此时，还没有执行销毁过程。</li>
+</ul>
+<h5 id="8、destroyed"><a href="#8、destroyed" class="headerlink" title="8、destroyed"></a>8、destroyed</h5><ul>
+<li>当执行destroyed函数的时候，组件已经完全被销毁了，此时vue实例身上的data、methods、指令等等都不可用了。</li>
+</ul>
+
       
 
       
@@ -171,6 +221,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Vue//" class="article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -181,6 +242,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/vue-vue中的动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue学习笔记---Vue中的动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/11/vue-表单与v-model/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue学习笔记---表单与v-model</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -202,8 +282,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#理解Vue的生命周期吧，感受vue从创建到销毁的美妙-（怎么看着觉得有点残忍）"><span class="toc-number">1.</span> <span class="toc-text">理解Vue的生命周期吧，感受vue从创建到销毁的美妙~（怎么看着觉得有点残忍）</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#一、什么是生命周期钩子"><span class="toc-number"></span> <span class="toc-text">一、什么是生命周期钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、生命周期钩子详解"><span class="toc-number"></span> <span class="toc-text">二、生命周期钩子详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#例子："><span class="toc-number">1.</span> <span class="toc-text">例子：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1、beforeCreate"><span class="toc-number">2.</span> <span class="toc-text">1、beforeCreate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、created"><span class="toc-number">3.</span> <span class="toc-text">2、created</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、beforeMount"><span class="toc-number">4.</span> <span class="toc-text">3、beforeMount</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、mounted"><span class="toc-number">5.</span> <span class="toc-text">4、mounted</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、beforeUpdate"><span class="toc-number">6.</span> <span class="toc-text">5、beforeUpdate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、updated"><span class="toc-number">7.</span> <span class="toc-text">6、updated</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7、beforeDestroy"><span class="toc-number">8.</span> <span class="toc-text">7、beforeDestroy</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8、destroyed"><span class="toc-number">9.</span> <span class="toc-text">8、destroyed</span></a></li></ol>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -243,7 +323,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

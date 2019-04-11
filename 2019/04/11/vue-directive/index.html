@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>categories | 星期六 | 一切源于喜欢</title>
+  <title>Vue学习笔记---自定义指令 | 星期六 | 一切源于喜欢</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。">
+<meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记---自定义指令">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/vue-directive/index.html">
 <meta property="og:site_name" content="星期六 | 一切源于喜欢">
+<meta property="og:description" content="写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T07:39:28.562Z">
+<meta property="og:updated_time" content="2019-04-11T06:45:02.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Vue学习笔记---自定义指令">
+<meta name="twitter:description" content="写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。">
   
     <link rel="alternative" href="/atom.xml" title="星期六 | 一切源于喜欢" type="application/atom+xml">
   
@@ -142,27 +145,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-vue-directive" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Vue学习笔记---自定义指令
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-12-07T07:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2019/04/11/vue-directive/" class="archive-article-date">
+  	<time datetime="2019-04-11T03:33:52.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h5 id="写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。"><a href="#写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。" class="headerlink" title="写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。"></a>写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。</h5><a id="more"></a>
+<h3 id="一-自定义全局指令"><a href="#一-自定义全局指令" class="headerlink" title="一.自定义全局指令"></a>一.自定义全局指令</h3><h5 id="1、方法：Vue-directive-‘自定义的指令名称’-钩子函数"><a href="#1、方法：Vue-directive-‘自定义的指令名称’-钩子函数" class="headerlink" title="1、方法：Vue.directive(‘自定义的指令名称’,{钩子函数}"></a>1、方法：Vue.directive(‘自定义的指令名称’,{钩子函数}</h5><h5 id="2、说明："><a href="#2、说明：" class="headerlink" title="2、说明："></a>2、说明：</h5><ul>
+<li>第一个参数是自定义的指令名称，注意：在定义的时候不需要加上’v-‘前缀，但是在调用的时候必须要加上’v-‘；</li>
+<li>第二个参数是一个对象，这个对象包含一些与指令相关的函数，这些函数会在特定的阶段执行，也叫“钩子函数”</li>
+</ul>
+<h5 id="3、实例：定义一个指令，使页面加载后，文本框自动获取焦点"><a href="#3、实例：定义一个指令，使页面加载后，文本框自动获取焦点" class="headerlink" title="3、实例：定义一个指令，使页面加载后，文本框自动获取焦点"></a>3、实例：定义一个指令，使页面加载后，文本框自动获取焦点</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;main&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; v-focus&gt;</span><br><span class="line">        &lt;!-- 如果red不加单引号的话，那么red将会被认为是data中的一个变量，所以必须加上，如果是数字不加也可以 --&gt;</span><br><span class="line">        &lt;p v-color=&quot;&apos;red&apos;&quot;&gt;哈哈&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //定义一个全局指令</span><br><span class="line">    Vue.directive(&apos;focus&apos;,&#123;</span><br><span class="line">        //每当指令绑定到元素上的时候，就会执行这个函数，只执行一次</span><br><span class="line">        bind:function()&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;,</span><br><span class="line">        //元素插入到dom树上的时候，就会执行这个函数，只执行一次.</span><br><span class="line">        //el表示被绑定的原生的js对象</span><br><span class="line">        inserted:function(el)&#123;</span><br><span class="line">            el.focus()</span><br><span class="line">        &#125;,</span><br><span class="line">        //当VNode更新时会执行updated，可能触发多次</span><br><span class="line">        updated:function()&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">        el: &quot;#main&quot;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="4、解析"><a href="#4、解析" class="headerlink" title="4、解析"></a>4、解析</h5><ul>
+<li>在上面的实例中，el.focus()不可以放在bind函数中，因为这个时候，==指令虽然绑定到了元素上，但是并没有插入到dom树上，也就是元素还在内存中没有被渲染到页面上==，这个时候调用focus方法不会起作用，而inserted表示元素已经插入到dom中了，已经加载在页面上了，这个时候使用focus方法才会生效。</li>
+<li>自定义全局指令v-color，指定元素的颜色<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;color&apos;,&#123;</span><br><span class="line">    bind:function(el,bindings)&#123;</span><br><span class="line">        el.style.color = bindings.value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这个是指定样式，所以不需要将元素插入到dom中，就像使用link引入css的时候，不需要关心元素是否加载了</p>
+<p>因此，与js操作相关的最好定义在inserted中，与样式相关的可以定义在bind中</p>
+<p>注：在调用指令时，v-color=”‘red’”，如果red不加单引号的话，那么red将会被认为是data中的一个变量，所以必须加上，如果是数字不加也可以</p>
+<h5 id="5、bindings对象"><a href="#5、bindings对象" class="headerlink" title="5、bindings对象"></a>5、bindings对象</h5><p>bindings对象有三个重要的属性：name、value、expression</p>
+<ul>
+<li>name：指令名，比如’focus’，不加 v- 前缀</li>
+<li>value：指令的绑定值，例如，v-my-directive=”1+1”中，value为2</li>
+<li>expression：字符串形式的指令表达式，例如，v-my-directive=”1+1”中，expression为”1+1”</li>
+</ul>
+<hr>
+<h3 id="二-自定义私有指令"><a href="#二-自定义私有指令" class="headerlink" title="二.自定义私有指令"></a>二.自定义私有指令</h3><p>以自定义v-color指令为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el: &quot;#main&quot;,</span><br><span class="line">    directives: &#123;</span><br><span class="line">        color: &#123;</span><br><span class="line">            bind:function(el, bindings)&#123;</span><br><span class="line">                el.style.color = bindings.value;</span><br><span class="line">            &#125;,</span><br><span class="line">            inserted: function () &#123;</span><br><span class="line">               </span><br><span class="line">            &#125;,</span><br><span class="line">            updated:function()&#123;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="三、简写"><a href="#三、简写" class="headerlink" title="三、简写"></a>三、简写</h3><p>如果只用到bind或update，就可省略指令定义对象的书写，可以直接写成下面这样的 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;color&apos;, function (el, bindings) &#123;</span><br><span class="line">    el.style.color = bindings.value;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -171,6 +198,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Vue//" class="article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -181,6 +219,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/vue-class与style绑定/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue学习笔记---v-bind及class与style绑定
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/11/vue-内置指令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue学习笔记---内置指令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -202,8 +259,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。"><span class="toc-number">1.</span> <span class="toc-text">写在前面：除了vue内置的指令（像：v-for，v-show等），用户还可以自定义指令。为什么自定义指令：在编码的过程中有时候需要操作dom元素，而vue不建议手动操作dom元素，这个时候就要自定义指令。</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#一-自定义全局指令"><span class="toc-number"></span> <span class="toc-text">一.自定义全局指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、方法：Vue-directive-‘自定义的指令名称’-钩子函数"><span class="toc-number">1.</span> <span class="toc-text">1、方法：Vue.directive(‘自定义的指令名称’,{钩子函数}</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、说明："><span class="toc-number">2.</span> <span class="toc-text">2、说明：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、实例：定义一个指令，使页面加载后，文本框自动获取焦点"><span class="toc-number">3.</span> <span class="toc-text">3、实例：定义一个指令，使页面加载后，文本框自动获取焦点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、解析"><span class="toc-number">4.</span> <span class="toc-text">4、解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、bindings对象"><span class="toc-number">5.</span> <span class="toc-text">5、bindings对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-自定义私有指令"><span class="toc-number"></span> <span class="toc-text">二.自定义私有指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、简写"><span class="toc-number"></span> <span class="toc-text">三、简写</span></a>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -243,7 +300,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

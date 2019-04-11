@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>categories | 星期六 | 一切源于喜欢</title>
+  <title>CSS学习笔记---动画 | 星期六 | 一切源于喜欢</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~">
+<meta name="keywords" content="Vue,JavaScript,CSS,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习笔记---动画">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/css-动画/index.html">
 <meta property="og:site_name" content="星期六 | 一切源于喜欢">
+<meta property="og:description" content="动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T07:39:28.562Z">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/A8CFC373435547CAAC3478FF43195F3A?method=download&shareKey=8f81a17b0078d1f102a5ce4257998834">
+<meta property="og:updated_time" content="2019-04-11T07:15:09.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="CSS学习笔记---动画">
+<meta name="twitter:description" content="动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/A8CFC373435547CAAC3478FF43195F3A?method=download&shareKey=8f81a17b0078d1f102a5ce4257998834">
   
     <link rel="alternative" href="/atom.xml" title="星期六 | 一切源于喜欢" type="application/atom+xml">
   
@@ -142,27 +147,118 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-css-动画" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      CSS学习笔记---动画
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-12-07T07:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2019/04/11/css-动画/" class="archive-article-date">
+  	<time datetime="2019-04-11T03:19:23.390Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h5 id="动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下"><a href="#动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下" class="headerlink" title="动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~"></a>动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~</h5><a id="more"></a>
+<h3 id="一、transition-过渡："><a href="#一、transition-过渡：" class="headerlink" title="一、transition 过渡："></a>一、transition 过渡：</h3><h5 id="1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀"><a href="#1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀" class="headerlink" title="1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀~"></a>1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀~</h5><h5 id="2、transition的属性"><a href="#2、transition的属性" class="headerlink" title="2、transition的属性"></a>2、transition的属性</h5><ul>
+<li>transition-property：<ul>
+<li>发生过渡的属性，如果希望所有的属性都发生过渡，就使用all。</li>
+<li>transition-property:all;</li>
+</ul>
+</li>
+<li>transition-duration：<ul>
+<li>过渡的持续时间。transition-duration:1s;</li>
+</ul>
+</li>
+<li>transition-timing-function：<ul>
+<li>运动方式。transition-timing-function:linear;</li>
+<li>常用的属性值:linear：线形；ease：减速；ease-in：加速；ease-out：减速；ease-in-out：先加速再减速。</li>
+</ul>
+</li>
+<li>transition-delay：<ul>
+<li>过渡延迟。即多长时间后才执行这个过渡动画。</li>
+</ul>
+</li>
+</ul>
+<h5 id="3、缩写"><a href="#3、缩写" class="headerlink" title="3、缩写"></a>3、缩写</h5><ul>
+<li>transition:过渡的属性 过渡的时间 运动方式  多久后执行过渡动画</li>
+<li>transition:width 1s linear 1s;</li>
+</ul>
+<h3 id="二、2D转换"><a href="#二、2D转换" class="headerlink" title="二、2D转换"></a>二、2D转换</h3><h5 id="转换-transform-可以实现元素的缩放、位移、旋转等效果。"><a href="#转换-transform-可以实现元素的缩放、位移、旋转等效果。" class="headerlink" title="转换(transform)可以实现元素的缩放、位移、旋转等效果。"></a>转换(transform)可以实现元素的缩放、位移、旋转等效果。</h5><h5 id="1、缩放-scale"><a href="#1、缩放-scale" class="headerlink" title="1、缩放:scale"></a>1、缩放:scale</h5><ul>
+<li>格式：scale(x,y)</li>
+<li>参数解析：x表示水平方向上的缩放倍数，y表示垂直方向上的缩放倍数。如果只写了一个值，则表示x轴和y轴等比例缩放。小于1表示缩小，大于1表示放大。注意：不能使用百分比来表示！！</li>
+<li>举例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.scale &#123;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    width: 150px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    color: #fff;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">    /* 最好加上过渡，不然变化会很突兀 */</span><br><span class="line">    transition: all 1s; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.scale:hover &#123;</span><br><span class="line">    transform: scale(1.2, 5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;scale&quot;&gt;触碰我，我就变大&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2、移动：translate"><a href="#2、移动：translate" class="headerlink" title="2、移动：translate"></a>2、移动：translate</h5><ul>
+<li>格式：translate(x,y)</li>
+<li>参数解析：x表示水平移动，正值表示向右移动，负值表示向做移动。y表示垂直移动，正值表示向下移动，负值表示向上移动。如果只写了一个参数，则表示水平移动。注意：参数必须为百分比的形式。</li>
+<li>举例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.translate &#123;</span><br><span class="line">    margin: 20px auto;</span><br><span class="line">    width: 150px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background-color: lightblue;</span><br><span class="line">    color: #fff;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">    /* 最好加上过渡，不然变化会很突兀 */</span><br><span class="line">    transition: all 1s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.translate:hover &#123;</span><br><span class="line">    transform: translate(-50%, 50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;translate&quot;&gt;触碰我，我就移动&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="3、旋转：rotate"><a href="#3、旋转：rotate" class="headerlink" title="3、旋转：rotate"></a>3、旋转：rotate</h5><ul>
+<li>格式：rotate(角度)</li>
+<li>参数解析：负值表示逆时针旋转，正值表示顺时针旋转</li>
+<li>举例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.rotate &#123;</span><br><span class="line">    margin: 20px auto;</span><br><span class="line">    width: 150px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background-color: lightgreen;</span><br><span class="line">    color: #fff;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">     /* 最好加上过渡，不然变化会很突兀 */</span><br><span class="line">    transition: all 1s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.rotate:hover &#123;</span><br><span class="line">    transform: rotate(360deg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;rotate&quot;&gt;触碰我，我就旋转&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="三、3D变换"><a href="#三、3D变换" class="headerlink" title="三、3D变换"></a>三、3D变换</h3><h5 id="说在前面的"><a href="#说在前面的" class="headerlink" title="说在前面的"></a>说在前面的</h5><pre><code>- 在学习3D变换之前，要先讲一个特别重要的属性：==perspective（透视）== ， 透视决定了我们看到的是3d的变换还是2d的变换。记住，没有透视，不成3d。
+- 在css中透视点的位置，通俗的说就是浏览器屏幕距离我们眼睛的距离。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">坐在电脑前的我们--&gt;电脑屏幕</span><br></pre></td></tr></table></figure>
+<h5 id="如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。"><a href="#如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。" class="headerlink" title="如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。"></a>如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。</h5><h5 id="3D坐标轴见下图"><a href="#3D坐标轴见下图" class="headerlink" title="3D坐标轴见下图"></a>3D坐标轴见下图</h5><p><img src="https://note.youdao.com/yws/api/personal/file/A8CFC373435547CAAC3478FF43195F3A?method=download&amp;shareKey=8f81a17b0078d1f102a5ce4257998834" alt="image"></p>
+<h5 id="1、3D平移"><a href="#1、3D平移" class="headerlink" title="1、3D平移"></a>1、3D平移</h5><ul>
+<li>水平移动：translateX(距离)，距离为正值，表示右移；距离为负值，表示左移</li>
+<li>垂直移动：translateY(距离)，距离为正值，表示下移；距离为负值，表示上移</li>
+<li>垂直于浏览器移动（z轴）：translateZ(距离)，距离为正值，表示垂直于浏览器往前移动，距离为负值，表示垂直于浏览器往后移动。</li>
+<li>perspective与translateZ结合使用能更好的让我们理解透视。</li>
+<li>perspective属性有两种书写形式，一种用在舞台元素上（动画元素们的共同父辈元素）；第二种就是用在当前动画元素上，与transform的其他属性写在一起。</li>
+<li>举例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">perspective写法一：</span><br><span class="line">    css代码：</span><br><span class="line">        .box &#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            margin: 200px auto;</span><br><span class="line">            background-color: red;</span><br><span class="line">            transition: all 1s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .box:hover &#123;</span><br><span class="line">            transform: perspective(500px) translateZ(200px);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    html代码：</span><br><span class="line">        &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">perspective写法二：</span><br><span class="line">    css代码</span><br><span class="line">        .box2 &#123;</span><br><span class="line">            width: 800px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            perspective: 500px;</span><br><span class="line">            -webkit-perspective: 500px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .box2 div &#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            margin: 200px auto;</span><br><span class="line">            background-color: red;</span><br><span class="line">            transition: all 1s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .box2 div:hover &#123;</span><br><span class="line">            transform: translateZ(200px);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    html代码</span><br><span class="line">        &lt;div class=&quot;box2&quot;&gt;</span><br><span class="line">            &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>解析：在这个例子中，设置了perspective为500px，相当于浏览器距离我们眼睛500px（垂直浏览器上方500px），同时设置了translateZ为200px，相当于这个div当处于hover状态的时候，会垂直于浏览器向上移动200px。我们都知道，近大远小，所以这个时候该div会在视觉上变大，因为他离我们的眼睛相对于之前近了200px。如果设置translateY的值大于perspective的值，这个时候我们就看不到这个div了，因为它已经到了我们眼睛的后面，我们是看不到眼睛后面的东西的。如果设置translateZ的值为负值，那么该div就会垂直于浏览器往下移动，这个时候视觉上会感觉这个div变小了，因为远了就感觉小了。</p>
+<h5 id="2、3D旋转"><a href="#2、3D旋转" class="headerlink" title="2、3D旋转"></a>2、3D旋转</h5><ul>
+<li>rotateX(角度)：绕着水平轴旋转，相当于单杠运动员，绕着杆上下翻转。</li>
+<li>rotateY(角度)：绕着垂直轴旋转，相当于跳钢管舞的人，绕着杆旋转。</li>
+<li>rotateZ(角度)：绕着垂直于浏览器的那个轴旋转。相当于抽奖时的大转盘在旋转。</li>
+</ul>
+<h5 id="3、transform-origin属性"><a href="#3、transform-origin属性" class="headerlink" title="3、transform-origin属性"></a>3、transform-origin属性</h5><ul>
+<li><p>transform-origin的作用<br>设置transform-origin可以改变元素运动的基点（基点就是元素围绕着一个点变形或者旋转），该属性只有在设置了transform的时候才会生效。<br>在默认情况下元素都是围绕其中心位置进行运动的。有时候我们需要对元素的基点进行改变，这个时候就可以使用transform-origin属性来调整。</p>
+</li>
+<li><p>使用规则<br>transform-origin(x,y)。x、y值可以使用百分比、em、px，其中，x可以使用left、center、right表示，y可以使用top、center、bottom表示。如果只有一个参数值，则表示垂直方向默认在中心位置不变。</p>
+</li>
+</ul>
+<p>demo：绘制一个爱心<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">        .box2 &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .heart1,</span><br><span class="line">        .heart2 &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 50px;</span><br><span class="line">            top: 0;</span><br><span class="line">            width: 50px;</span><br><span class="line">            height: 100%;</span><br><span class="line">            background-color: red;</span><br><span class="line">            border-radius: 50px 50px 0 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .heart1 &#123;</span><br><span class="line">            transform-origin: center top;</span><br><span class="line">            transform: translate(-59px) rotate(-45deg);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .heart2 &#123;</span><br><span class="line">            transform-origin: center top;</span><br><span class="line">            transform: translate(47px) rotate(45deg);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;box2&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;heart1&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;heart2&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、动画：animation"><a href="#四、动画：animation" class="headerlink" title="四、动画：animation"></a>四、动画：animation</h3><h5 id="动画需要先定义再进行调用"><a href="#动画需要先定义再进行调用" class="headerlink" title="动画需要先定义再进行调用"></a>动画需要先定义再进行调用</h5><ul>
+<li>定义的格式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@keyframes 动画名称&#123;</span><br><span class="line">    from&#123;</span><br><span class="line">        初始状态</span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    to&#123;</span><br><span class="line">        结束状态</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>解析：from to 表示的元素动画的起始状态，也可以使用百分比来表示不同时间点元素的状态</p>
+<ul>
+<li><p>调用的格式：animation:定义的动画名称 持续时间 执行次数 是否反向 运动曲线 延迟执行<br>解析：这种写法是调用动画的简写方式，具体的属性如下：</p>
+<ul>
+<li>animation-name：调用的动画名称，必填，且顺序固定</li>
+<li>animation-duration：执行一次动画持续的时间，必填，且顺序固定</li>
+<li>animation-iteration-count：动画的执行次数，infinite表示无数次，填写数字表示运行多少次</li>
+<li>animation-direction：动画的方向，normal表示正常，alternate表示反向。默认正常</li>
+<li>animation-delay：动画延迟执行</li>
+<li>animation-fill-mode：动画结束时盒子的状态。forwards：保持动画结束后的状态（默认）；backwards：动画结束后回到最初的状态。</li>
+<li>animation-timing-function：运动曲线，比如：linear、ease-in-out、steps()等。==注意，如果把属性值写成steps()，则表示动画不是连续执行的，而是分成几步执行。==</li>
+</ul>
+</li>
+<li><p>demo：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">1、简易的钟：</span><br><span class="line">    html代码</span><br><span class="line">        &lt;div class=&quot;clock&quot;&gt;</span><br><span class="line">            &lt;p&gt;&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">    css代码</span><br><span class="line">        .clock &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            border-radius: 100%;</span><br><span class="line">            border: 1px solid black;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .clock p &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            width: 0px;</span><br><span class="line">            height: 80px;</span><br><span class="line">            border: 1px solid black;</span><br><span class="line">            left: 100px;</span><br><span class="line">            top: 10px;</span><br><span class="line">            animation: clock 60s infinite steps(60);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @keyframes clock &#123;</span><br><span class="line">            from &#123;</span><br><span class="line">                transform-origin: center bottom;</span><br><span class="line">                transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            to &#123;</span><br><span class="line">                transform-origin: center bottom;</span><br><span class="line">                transform: rotate(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">2、模拟小鱼在游动</span><br><span class="line">    html代码</span><br><span class="line">        &lt;div class=&quot;pool&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;fish&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">    css代码</span><br><span class="line">        body &#123;</span><br><span class="line">            background-color: skyblue;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .pool &#123;</span><br><span class="line">            width: 509px;</span><br><span class="line">            height: 270px;</span><br><span class="line">            animation: swim 20s infinite;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .fish &#123;</span><br><span class="line">            width: 509px;</span><br><span class="line">            height: 270px;</span><br><span class="line">            background: url(./shark.png) no-repeat 0px 0px;</span><br><span class="line">            animation: shark 1s infinite steps(8);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @keyframes shark &#123;</span><br><span class="line">            from &#123;&#125;</span><br><span class="line">            to &#123;</span><br><span class="line">                background-position: 0px -2160px;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @keyframes swim &#123;</span><br><span class="line">            from &#123;&#125;</span><br><span class="line">            to &#123;</span><br><span class="line">                margin-left: 1400px;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -171,6 +267,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/CSS//" class="article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -181,6 +288,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/vue-内置指令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue学习笔记---内置指令
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -202,8 +323,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下"><span class="toc-number">1.</span> <span class="toc-text">动画给我的感觉是特别的炫酷，一直想学，但是每次看了之后都记不住，在这里把它的基本语法码一下~</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#一、transition-过渡："><span class="toc-number"></span> <span class="toc-text">一、transition 过渡：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀"><span class="toc-number">1.</span> <span class="toc-text">1、我的理解就是元素从一个状态到另一个状态时的过渡行为。为了让状态的改变更加好看柔和，不那么突兀~</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、transition的属性"><span class="toc-number">2.</span> <span class="toc-text">2、transition的属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、缩写"><span class="toc-number">3.</span> <span class="toc-text">3、缩写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、2D转换"><span class="toc-number"></span> <span class="toc-text">二、2D转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#转换-transform-可以实现元素的缩放、位移、旋转等效果。"><span class="toc-number">1.</span> <span class="toc-text">转换(transform)可以实现元素的缩放、位移、旋转等效果。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1、缩放-scale"><span class="toc-number">2.</span> <span class="toc-text">1、缩放:scale</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、移动：translate"><span class="toc-number">3.</span> <span class="toc-text">2、移动：translate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、旋转：rotate"><span class="toc-number">4.</span> <span class="toc-text">3、旋转：rotate</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、3D变换"><span class="toc-number"></span> <span class="toc-text">三、3D变换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#说在前面的"><span class="toc-number">1.</span> <span class="toc-text">说在前面的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。"><span class="toc-number">2.</span> <span class="toc-text">如上图，箭头的长度就是透视点的长度。在3d转换中必须加上perspective，不然就看不出3d的效果。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3D坐标轴见下图"><span class="toc-number">3.</span> <span class="toc-text">3D坐标轴见下图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1、3D平移"><span class="toc-number">4.</span> <span class="toc-text">1、3D平移</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、3D旋转"><span class="toc-number">5.</span> <span class="toc-text">2、3D旋转</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、transform-origin属性"><span class="toc-number">6.</span> <span class="toc-text">3、transform-origin属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、动画：animation"><span class="toc-number"></span> <span class="toc-text">四、动画：animation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#动画需要先定义再进行调用"><span class="toc-number">1.</span> <span class="toc-text">动画需要先定义再进行调用</span></a></li></ol>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -243,7 +364,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
